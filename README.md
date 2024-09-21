@@ -4,11 +4,13 @@
 
 I have created an interactive social media web application where users can add and remove photos and make a few minor adjustments to their profile.
 
-### Technologies and Techniques Used
+### Video Description
 
-This project implements:
+(I will add the video here for my second iteration.)
 
-- Figma for the design to apply to my project
+### Technologies Used
+
+- Figma for design content
 - HTML5 for structuring web content
 - CSS3 and Media Queries for styling and ensuring responsiveness across different devices
 - Flexbox and Grid for layout and adjustments
@@ -20,3 +22,7 @@ This project implements:
 ### Link to my Project
 
 [https://michelleoco.github.io/se_project_spots/](https://michelleoco.github.io/se_project_spots/)
+
+### Plans for Future Improvements
+
+- Create button functionality
