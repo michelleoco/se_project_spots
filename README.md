@@ -6,7 +6,7 @@ The goal of this project is to show responsiveness across the most widely used s
   
 ### Link to my Project
 
-  
+https://michelleoco.github.io/se_project_spots/
 
   
 
