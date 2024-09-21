@@ -15,8 +15,7 @@ This project implements:
 
 ### Screenshots
 
-![Screenshot of 1440p](./images/demo/1440.png)
-![Screenshot of 320p](./images/demo/320.png)
+![Screenshots- 1440p and 320p](./images/demo/screenshots-1440-320.jpg)
 
 ### Link to my Project
 
