@@ -42,6 +42,27 @@
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
+            <template id="card-template">
+              <li class="card">
+                <img src="" alt="" class="card__image" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button type="button" class="card__like-btn"></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  src="./images/2-elephants-okavango-photo-by-michelle-oconnell.jpg"
+                  alt="Elephants in the Okavango Delta photo by Michelle O'Connell"
+                  class="card__image"
+                />
+                <div class="card__content">
+                  <h2 class="card__title">Elephants in the Okavango Delta</h2>
+                  <button type="button" class="card__like-btn"></button>
+                </div>
+              </li>
+            </template>
+            <!--
             <li class="card">
               <img
                 src="./images/1-elephant-portrait-photo-by-michelle-oconnell.jpg"
@@ -107,31 +128,33 @@
                 <h2 class="card__title">Waterhole</h2>
                 <button type="button" class="card__like-btn"></button>
               </div>
-            </li>
+            </li> -->
           </ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__content">2023 © Spots</p>
       </footer>
-      <div class="modal modal_opened">
+      <div class="modal" id="edit-modal">
         <div class="modal__container">
           <button type="submit" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form name="edit-profile" class="modal__label">
-            <label for="name" class="modal__label modal__label_label"
+          <form name="edit-profile" class="modal__form">
+            <label for="profile-name-input" class="modal__form modal__label"
               >Name
               <input
-                id="name"
+                id="profile-name-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
               />
             </label>
-            <label for="description" class="modal__label modal__label_label"
+            <label
+              for="profile-description-input"
+              class="modal__form modal__label"
               >Description
               <input
-                id="description"
+                id="profile-description-input"
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"

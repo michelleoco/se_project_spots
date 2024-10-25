@@ -38,6 +38,7 @@
   border: none;
   background-color: #fff;
   opacity: 40%;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -47,14 +48,14 @@
   font-weight: 500;
 }
 
-.modal__label {
+.modal__form {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
 }
 
-.modal__label_label {
+.modal__label {
   line-height: 17.6px;
   font-size: 16px;
   font-weight: 500;
@@ -77,6 +78,7 @@
   color: #fff;
   font-size: 16px;
   line-height: 1;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
