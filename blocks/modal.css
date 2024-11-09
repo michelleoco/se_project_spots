@@ -14,7 +14,7 @@
   visibility: hidden;
 }
 
-.modal_opened {
+.modal__opened {
   visibility: visible;
 }
 
@@ -86,6 +86,7 @@
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .modal__submit-btn:hover {
