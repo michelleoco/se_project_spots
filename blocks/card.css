@@ -15,6 +15,7 @@
   display: flex;
   align-items: end;
   justify-content: space-between;
+  position: relative;
 }
 
 .card__title {
@@ -40,6 +41,34 @@
 
 .card__like-btn:hover {
   opacity: 100%;
+  cursor: pointer;
+}
+
+.card__like-btn_liked {
+  background-image: url("../images/like-icon-liked.svg");
+  opacity: 100%;
+}
+
+.card__like-btn_liked:hover {
+  background-image: url("../images/like-icon-liked-hover.svg");
+}
+
+.card__delete-btn {
+  width: 32px;
+  height: 32px;
+  background-image: url("../images/delete-icon.svg");
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 407px;
+  right: 10px;
+  border-radius: 20px;
+  padding: 0;
+  color: white;
+}
+
+.card__delete-btn:hover {
+  background-image: url("../images/delete-icon-hover.svg");
   cursor: pointer;
 }
 

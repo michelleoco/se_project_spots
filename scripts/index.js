@@ -33,8 +33,8 @@ const initialCards = [
 
 /* ----------------------------------------------------------------------------- */
 /*                               Elements                                        */
-/* ----------------------------------------------------------------------------- */ const profileEditBtn =
-  document.querySelector(".profile__edit-btn");
+/* ----------------------------------------------------------------------------- */
+const profileEditBtn = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const cardModalBtn = document.querySelector(".profile__add-btn");
@@ -70,6 +70,8 @@ function getCardElement(data) {
     .cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardNameEl = cardElement.querySelector(".card__title");
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
   cardImageEl.addEventListener("click", () => {
     modalImagePreview.src = cardData.link;
@@ -79,19 +81,17 @@ function getCardElement(data) {
     openModal(imageModal);
   });
 
-  /*likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });*/
-
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  return cardElement;
+  cardLikeBtn.addEventListener("click", () => {
+    cardLikeBtn.classList.toggle("card__like-btn_liked");
+  });
+
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
+  });
 }
 
 /* ----------------------------------------------------------------------------- */
@@ -104,13 +104,13 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
+//Add new card
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
   const inputValues = {
     name: cardCaptionInput.value,
     link: cardLinkInput.value,
   };
-
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
@@ -142,12 +142,8 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 cardForm.addEventListener("submit", handleCardFormSubmit);
 
+//Initial array of cards
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
-
-/*initialCards.forEach((data) => {
-  const cardElement = getCardElement(data);
-  cardListEl.append(cardElement);
-});*/
