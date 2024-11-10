@@ -12,10 +12,14 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   padding: 0 20px;
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
 .modal__opened {
   visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__container {
@@ -123,7 +127,6 @@
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .modal__submit-btn:hover {
