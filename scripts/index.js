@@ -39,14 +39,14 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const cardModalBtn = document.querySelector(".profile__add-btn");
 const editModal = document.querySelector("#edit-modal");
-const editFormElement = editModal.querySelector(".modal__form");
+const editFormElement = document.forms["profile-form"];
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
 const cardModal = document.querySelector("#add-card-modal");
-const cardForm = cardModal.querySelector(".modal__form");
+const cardForm = document.forms["add-card-form"];
 const cardModalClosebtn = cardModal.querySelector(".modal__close-btn");
 const cardLinkInput = cardModal.querySelector("#image-link-input");
 const cardCaptionInput = cardModal.querySelector("#caption-input");
@@ -64,11 +64,11 @@ const previewModalClosebtn = previewModal.querySelector(
 /*                               Functions                                       */
 /* ----------------------------------------------------------------------------- */
 function openModal(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(data) {
@@ -82,7 +82,7 @@ function getCardElement(data) {
 
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
-  cardImageEl.alt = data.alt;
+  cardImageEl.alt = data.name;
 
   cardLikeBtn.classList.remove("card__like-btn_liked");
 
@@ -98,7 +98,7 @@ function getCardElement(data) {
     openModal(previewModal);
     previewModalCaptionEl.textContent = data.name;
     previewModalImageEl.src = data.link;
-    previewModalImageEl.alt = data.alt;
+    previewModalImageEl.alt = data.name;
   });
 
   return cardElement;
