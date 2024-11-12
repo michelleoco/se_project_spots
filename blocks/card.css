@@ -87,4 +87,8 @@
     background-size: 20px 18px;
     background-repeat: no-repeat;
   }
+
+  .card__delete-btn {
+    bottom: 276px;
+  }
 }
