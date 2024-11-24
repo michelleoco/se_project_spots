@@ -127,7 +127,7 @@ function handleCardFormSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
-  disableButton(cardSubmitBtn);
+  disableButton(cardSubmitBtn, settings);
   closeModal(cardModal);
 }
 
@@ -137,11 +137,14 @@ function handleCardFormSubmit(evt) {
 profileEditBtn.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+
   //Optional
   resetValidation(editFormElement, [
     editModalNameInput,
     editModalDescriptionInput,
+    settings,
   ]);
+
   openModal(editModal);
 });
 
