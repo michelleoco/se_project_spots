@@ -4,9 +4,9 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit",
-  inactiveButtonClass: "button_inactive", //?
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error", //modal__error_visible
+  inactiveButtonClass: "modal__submit_disabled",
+  inputErrorClass: "modal__input_type_error", //?
+  errorClass: "modal__error",
 };
 
 const showInputError = (formEl, inputEl, errorMsg, config) => {
@@ -37,18 +37,16 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
-    disableButton(buttonEl);
+    disableButton(buttonEl, config);
   } else {
     buttonEl.disabled = false;
-    //Remove the disabled class
     buttonEl.classList.remove(config.inactiveButtonClass);
   }
 };
 
 const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
-  //TODO add modifier class to buttonEL to make it gray
-  //Don't forget the CSS
+  buttonEl.classList.add(config.inactiveButtonClass); //add modifier class
 };
 
 //Optional
