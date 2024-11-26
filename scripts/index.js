@@ -34,22 +34,21 @@ const initialCards = [
 /* ----------------------------------------------------------------------------- */
 /*                               Elements                                        */
 /* ----------------------------------------------------------------------------- */
+// Constants:
 const profileEditBtn = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-const cardModalBtn = document.querySelector(".profile__add-btn");
 const editModal = document.querySelector("#edit-modal");
-const editFormElement = document.forms["profile-form"];
+const editFormElement = document.forms["profile-form"]; //Why brackets?
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
+const cardModalBtn = document.querySelector(".profile__add-btn");
 const cardModal = document.querySelector("#add-card-modal");
-const cardForm = document.forms["add-card-form"];
-
+const cardForm = document.forms["add-card-form"]; //Why brackets?
 const cardSubmitBtn = cardModal.querySelector(".modal__submit");
-
 const cardModalClosebtn = cardModal.querySelector(".modal__close-btn");
 const cardLinkInput = cardModal.querySelector("#image-link-input");
 const cardCaptionInput = cardModal.querySelector("#caption-input");
@@ -68,55 +67,62 @@ const previewModalClosebtn = previewModal.querySelector(
 /* ----------------------------------------------------------------------------- */
 
 function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("mousedown", handleCloseOverlay);
-  document.addEventListener("keydown", handleEscKeyPress);
+  modal.classList.add("modal_opened"); //This adds the class "modal_opened". ??
+  document.addEventListener("mousedown", handleCloseOverlay); //This calls the handleCloseOverlay function written below. Must have add & remove.
+  document.addEventListener("keydown", handleEscKeyPress); //This calls the handleEscKeyPress function written below. Must have add & remove.
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.addEventListener("mosedown", handleCloseOverlay);
-  document.addEventListener("keydown", handleEscKeyPress);
+  modal.classList.remove("modal_opened"); //This removes the class "modal_opened". ??
+  document.removeEventListener("mosedown", handleCloseOverlay);
+  document.removeEventListener("keydown", handleEscKeyPress);
 }
 
-function handleEscKeyPress(evt) {
-  if (evt.key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened");
-    if (openedModal) {
-      closeModal(openedModal);
-    }
-  }
-}
-
+//Creates the function handleCloseOverlay. It says, if there is a modal open (a target event that contains modal_open), close it. ??
 function handleCloseOverlay(evt) {
   if (evt.target.classList.contains("modal_opened")) {
     closeModal(evt.target);
   }
 }
 
+//Creates the function handleEscKeyPress. It says, if the key event is ESC, look for the open modal, and if the modal is open, close it.
+function handleEscKeyPress(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened"); //Tells only close the opened modal.
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+//Creates the function getCardElement. It says... ??
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
-    .cloneNode(true);
+    .cloneNode(true); //Creates a copy (clone) for manipulation. Hard code stays in tact.
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardNameEl = cardElement.querySelector(".card__title");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
+  //Defines what elements will be changed by what inputs.
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  cardLikeBtn.classList.remove("card__like-btn_liked");
+  cardLikeBtn.classList.remove("card__like-btn_liked"); //What is this doing ??
 
+  //Listens for a "click" on the cardLikeBtn. When it hears a "click", it toggles the button on and off.
   cardLikeBtn.addEventListener("click", () => {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
 
+  //Listens for a "click" on the cardDeleteBtn. When it hears a "click", it removes the card.
   cardDeleteBtn.addEventListener("click", () => {
     cardElement.remove();
   });
 
+  //Listens for a "click" on the cardImageEl. When it hears a "click", it opens the previewModal with image, description text, and alt text.
   cardImageEl.addEventListener("click", () => {
     openModal(previewModal);
     previewModalCaptionEl.textContent = data.name;
@@ -124,12 +130,13 @@ function getCardElement(data) {
     previewModalImageEl.alt = data.name;
   });
 
-  return cardElement;
+  return cardElement; //Why do we need to return? Revisit!
 }
 
 /* ----------------------------------------------------------------------------- */
 /*                                  Handlers                                     */
 /* ----------------------------------------------------------------------------- */
+
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
@@ -190,6 +197,6 @@ previewModalClosebtn.addEventListener("click", () => {
 
 //Initial array of cards
 initialCards.forEach((item) => {
-  const cardElement = getCardElement(item);
+  const cardElement = getCardElement(item); //This is where getCardElement is called
   cardsList.append(cardElement);
 });
