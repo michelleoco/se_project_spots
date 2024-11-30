@@ -18,7 +18,7 @@ I have created an interactive social media web application where users can add a
 
 ### Screenshots
 
-![spots_screenshot](./images/demo/spots_screenshot.jpg)
+![spots_screenshot](https://github.com/user-attachments/assets/e31dd35d-d52c-494b-81cd-167196debe70)
 
 ### Link to my Project
 
