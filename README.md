@@ -2,7 +2,7 @@
 
 ### Project Overview
 
-I have created an interactive social media web application where users can add and remove photos and make a few minor adjustments to their profile.
+I have created an interactive social media web application where users can add and remove photos and make adjustments to their profile.
 
 ### Video Description
 
@@ -14,10 +14,11 @@ I have created an interactive social media web application where users can add a
 - HTML5 for structuring web content
 - CSS3 and Media Queries for styling and ensuring responsiveness across different devices
 - Flexbox and Grid for layout and adjustments
+- JavaScript for user interactivity of buttons, pop-up forms, and form validation
 
 ### Screenshots
 
-![Screenshots- 1440p and 320p](./images/demo/screenshots-1440-320.jpg)
+![Screenshots- 1440p and 320p](./images/demo/spots_screenshot.jpg)
 
 ### Link to my Project
 
@@ -25,4 +26,4 @@ I have created an interactive social media web application where users can add a
 
 ### Plans for Future Improvements
 
-- Create button functionality
+- 
