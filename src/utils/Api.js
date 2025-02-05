@@ -15,7 +15,12 @@ class Api {
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
-    }).then(this._handleServerResponse);
+    })
+      .then(this._handleServerResponse)
+      .then((data) => {
+        console.log("This is data from back the end", data);
+        return data;
+      });
   }
 
   getUserInfo() {
