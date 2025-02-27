@@ -104,17 +104,16 @@ const cardsList = document.querySelector(".cards__list");
 
 //Avatar form elements
 const avatarModal = document.querySelector("#avatar-modal");
-const avatarForm = avatarModal.querySelector(".modal__form");
-//const avatarSubmitBtn = avatarModal.querySelector(".modal__submit");
+const avatarForm = document.forms["edit-avatar-form"];
 const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 
 //Delete form elements
 const deleteModal = document.querySelector("#delete-modal");
+const deleteForm = document.forms["delete-form"];
 const deleteModalDeleteBtn = deleteModal.querySelector(".modal__delete");
 const deleteModalCancelBtn = deleteModal.querySelector(".modal__cancel");
 const deleteModalCloseBtn = deleteModal.querySelector(".modal__close-btn");
-const deleteForm = deleteModal.querySelector(".modal__form");
 
 //Preview image popup elements
 const previewModal = document.querySelector("#preview-modal");

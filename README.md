@@ -1,28 +1,26 @@
 # Spots
 
-### Project Overview
+## Project Overview
 
-I have created an interactive social media web application where users can add and remove photos and make a few minor adjustments to their profile.
+An interactive social media web application where users can:
 
-### Video Description
+- Create a profile with avatar, name and description
+- Add photos and descriptions
+- Delete photos
+- Like and unlike photos
 
-[https://drive.google.com/file/d/1qrmuy7TtP5WREHuDeJ9B1zJZkMrP6JqJ/view?usp=sharing](https://drive.google.com/file/d/1qrmuy7TtP5WREHuDeJ9B1zJZkMrP6JqJ/view?usp=sharing)
-
-### Technologies Used
+## Technologies Used
 
 - Figma for design content
 - HTML5 for structuring web content
 - CSS3 and Media Queries for styling and ensuring responsiveness across different devices
 - Flexbox and Grid for layout and adjustments
+- Javascript for functionality
 
-### Screenshots
+## Screenshots
 
-![Screenshots- 1440p and 320p](./images/demo/screenshots-1440-320.jpg)
+[Screenshots- 1440p and 320p](./src/images/demo/spots_screenshot.jpg)
 
-### Link to my Project
+## Links
 
 [https://michelleoco.github.io/se_project_spots/](https://michelleoco.github.io/se_project_spots/)
-
-### Plans for Future Improvements
-
-- Create button functionality
