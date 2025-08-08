@@ -1,4 +1,3 @@
-// Declaring a configuration object that contains the necessary classes and selectors.
 export const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -45,7 +44,7 @@ const toggleButtonState = (inputList, buttonEl, config) => {
 
 export const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
-  buttonEl.classList.add(config.inactiveButtonClass); //add modifier class
+  buttonEl.classList.add(config.inactiveButtonClass);
 };
 
 export const resetValidation = (formEl, inputList, config) => {
@@ -55,7 +54,6 @@ export const resetValidation = (formEl, inputList, config) => {
 };
 
 const setEventListeners = (formEl, config) => {
-  //formEl is an arbitrary identifier
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   const buttonEl = formEl.querySelector(config.submitButtonSelector);
 
@@ -75,6 +73,3 @@ export const enableValidation = (config) => {
     setEventListeners(formEl, config);
   });
 };
-
-// Passing the configuration object to enableValidation when we call it.
-//enableValidation(validaitonConfig);

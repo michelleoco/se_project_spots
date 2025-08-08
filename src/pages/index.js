@@ -124,7 +124,7 @@ const previewModalCloseBtn = previewModal.querySelector(
 );
 
 // Declares variables to store the current selected
-// card and its ID. Values will be assigned when a delete icon is clicked.
+// card and its ID. Values will be assigned when a delete icon is clicked
 let selectedCard, selectedCardId;
 
 /* ----------------------------------------------------------------------------- */
@@ -132,9 +132,9 @@ let selectedCard, selectedCardId;
 /* ----------------------------------------------------------------------------- */
 
 function openModal(modal) {
-  modal.classList.add("modal_opened"); //This adds the class "modal_opened".
-  document.addEventListener("mousedown", handleCloseOverlay); //This calls the handleCloseOverlay function written below. Must have add & remove.
-  document.addEventListener("keydown", handleEscKeyPress); //This calls the handleEscKeyPress function written below. Must have add & remove.
+  modal.classList.add("modal_opened"); //This adds the class "modal_opened"
+  document.addEventListener("mousedown", handleCloseOverlay); //This calls the handleCloseOverlay function written below. Must have add & remove
+  document.addEventListener("keydown", handleEscKeyPress); //This calls the handleEscKeyPress function written below. Must have add & remove
 }
 
 function closeModal(modal) {
@@ -147,7 +147,7 @@ function getCardElement(data) {
   //pass data here
   const cardElement = cardTemplate.content
     .querySelector(".card")
-    .cloneNode(true); //Creates a clone for manipulation. Hard code stays in tact.
+    .cloneNode(true); //Creates a clone for manipulation. Hard code stays in tact
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardNameEl = cardElement.querySelector(".card__title");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
@@ -171,7 +171,7 @@ function getCardElement(data) {
     handleDeleteCard(cardElement, data);
   });
 
-  //When it hears a "click", it opens the previewModal with image, description text, and alt text.
+  //When it hears a "click", it opens the previewModal with image, description text, and alt text
   cardImageEl.addEventListener("click", () => {
     openModal(previewModal);
     previewModalCaptionEl.textContent = data.name;
@@ -201,10 +201,9 @@ function handleCloseOverlay(evt) {
   }
 }
 
-//If the key event is ESC, look for the open modal, and if the modal is open, close it
 function handleEscKeyPress(evt) {
   if (evt.key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened"); //Tells only close the opened modal
+    const openedModal = document.querySelector(".modal_opened");
     if (openedModal) {
       closeModal(openedModal);
     }
@@ -264,7 +263,7 @@ function handleCardFormSubmit(evt) {
     .createCard(inputValues)
     .then((data) => {
       const cardElement = getCardElement(data);
-      cardsList.prepend(cardElement); //pre-before, append-after
+      cardsList.prepend(cardElement);
       evt.target.reset(); //there's a target element and calling a JS fuction on it .reset()// creating a template that will be defined when the function gets called
       disableButton(cardSubmitBtn, validationConfig); //updated with validationConfig
       closeModal(cardModal);
@@ -290,7 +289,7 @@ function handleDeleteFormSubmit(evt) {
   api
     .deleteCard(selectedCardId)
     .then(() => {
-      selectedCard.remove(); //Removes the card from the DOM
+      selectedCard.remove();
       closeModal(deleteModal);
     })
     .catch(console.error)
@@ -338,8 +337,6 @@ avatarModalBtn.addEventListener("click", () => {
 avatarModalCloseBtn.addEventListener("click", () => {
   closeModal(avatarModal);
 });
-
-//deleteModalDeleteBtn.addEventListener("click", handleDeleteFormSubmit);
 
 deleteModalCancelBtn.addEventListener("click", () => {
   closeModal(deleteModal);

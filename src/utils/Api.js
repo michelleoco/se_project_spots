@@ -33,7 +33,7 @@ class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      // Send the data in the body as a JSON string.
+      // Send the data in the body as a JSON string
       body: JSON.stringify({
         name,
         about,
